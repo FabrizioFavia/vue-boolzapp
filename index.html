@@ -57,23 +57,24 @@
                     <div class="messagesSec">
 
                         <!-- CHAT -->
-                        <div v-for="(chat, i) in contacts" class="chat justify-content-between">
-                            <div class="leftChat">
-                                <div class="logoContainer">
-                                    <img class="profileImg" :src="chat.avatar" alt="">
-                                </div>
-                                <div class="nameAndMsg ms-3 justify-content-center">
-                                    <div class="friendName">{{chat.name}}</div>
-                                    <div class="message">
-                                        <p>{{chat.messages[chat.messages.length-1].message}}</p>
+                        <template v-for="(chat, i) in contacts">
+                            <div @click="clickedChat(chat)" class="chat justify-content-between">
+                                <div class="leftChat">
+                                    <div class="logoContainer">
+                                        <img class="profileImg" :src="chat.avatar" alt="">
+                                    </div>
+                                    <div class="nameAndMsg ms-3 justify-content-center">
+                                        <div class="friendName">{{chat.name}}</div>
+                                        <div class="message">
+                                            <p>{{chat.messages[chat.messages.length-1].message}}</p>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="msgTime pt-2 pe-2 align-self-start">
+                                    <span>{{chat.messages[chat.messages.length-1].date}}</span>
+                                </div>
                             </div>
-                            <div class="msgTime pt-2 pe-2 align-self-start">
-                                <span>12:10</span>
-                            </div>
-                        </div>
-
+                        </template>
                     </div>
 
 
@@ -86,12 +87,12 @@
                     <div class=" ps-2 pe-4 pt-1 sectionHeader d-flex align-items-center justify-content-between">
                         <div class="leftChat">
                             <div class="logoContainer">
-                                <img class="profileImg mt-2" src="./img/avatar_io.jpg" alt="">
+                                <img class="profileImg mt-2" :src="selectedChat.avatar" alt="">
                             </div>
                             <div class="lastTime ms-3">
-                                <div class="friendName pt-3">Gabriella</div>
+                                <div class="friendName pt-3">{{selectedChat.name}}</div>
                                 <div class="message">
-                                    <p>Ultimo messaggio oggi alle 12:00 </p>
+                                    <p>Ultimo messaggio il {{selectedChat.messages[selectedChat.messages.length-1].date}}</p>
                                 </div>
                             </div>
                         </div>

@@ -186,3 +186,16 @@ body {
     padding-left: 20px;
     font-size: 14px;
 }
+
+.msg{
+    width: 100px;
+    border-radius: 10px;
+}
+
+.sentMsg{
+background-color: #D5F9BA;
+}
+
+.receivedMsg{
+    background-color: white;
+}
