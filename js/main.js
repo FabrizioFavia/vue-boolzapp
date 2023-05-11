@@ -3,7 +3,13 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            
+
+            newMessage: {
+                date: '10/01/2020 15:30:55',
+                message: '',
+                status: 'sent'
+            },
+
             contacts: [
                 {
                     name: 'Michele',
@@ -172,11 +178,24 @@ createApp({
     },
     methods: {
         clickedChat(chat) {
-            this.selectedChat = chat; 
+            this.clicked = false;
+            this.selectedChat = chat;
             console.log(this.selectedChat);
-        }
+
+            if (this.clicked == false) {
+                this.clicked = true;
+            }
+
+            console.log(this.clicked)
+        },
+        addMsg() {
+            let newMsg = {...this.newMessage};
+            console.log(newMsg);
+            this.selectedChat.messages.push(newMsg);
+            this.newMessage.message = "";
+        },
     },
-    beforeMount(){
+    beforeMount() {
         this.selectedChat = this.contacts[0]
     }
 }).mount('#app')

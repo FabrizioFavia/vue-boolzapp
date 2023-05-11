@@ -92,7 +92,8 @@
                             <div class="lastTime ms-3">
                                 <div class="friendName pt-3">{{selectedChat.name}}</div>
                                 <div class="message">
-                                    <p>Ultimo messaggio il {{selectedChat.messages[selectedChat.messages.length-1].date}}</p>
+                                    <p>Ultimo messaggio il
+                                        {{selectedChat.messages[selectedChat.messages.length-1].date}}</p>
                                 </div>
                             </div>
                         </div>
@@ -103,8 +104,12 @@
                         </div>
                     </div>
                     <!------------- MAIN RIGHT ---------------->
-                    <div class="mainSection">
-
+                    <div class="mainSection d-flex flex-column">
+                        <template v-for="message in selectedChat.messages">
+                            <div :class="(message.status==`sent`) ? `sent` : `received`" class="msg">
+                                {{message.message}}
+                            </div>
+                        </template>
                     </div>
 
                     <!--------------- FOOTER ------------------>
@@ -113,7 +118,7 @@
                             <i class="fa-regular fa-face-smile ms-3"></i>
                         </div>
                         <div class="writeMsg ms-5 me-5">
-                            <input class="textBox" type="text" placeholder="Scrivi un messaggio">
+                            <input v-model="newMessage.message" @keyUp.enter="addMsg" class="textBox" type="text" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="vocalMsg">
                             <i class="fa-solid fa-microphone pe-4"></i>

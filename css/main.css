@@ -154,13 +154,32 @@ body {
     width: 100%;
     height: 780px;
     background-image: url("../img/mine.jpg");
+    padding: 30px 80px;
 }
 
-.footerRightSec {
-    width: 100%;
-    height: 70px;
-    background-color: #F3EEEA;
+.msg {
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 350px;
+    margin-top: 20px;
 }
+
+.sent {
+    background-color: #D5F9BA;
+    display: flex;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: white;
+    display: flex;
+    align-self: flex-start;
+}
+
+.clicked {
+    background-color: #E9EBEB;
+}
+
 
 .lastTime {
     height: 100%;
@@ -169,6 +188,13 @@ body {
 }
 
 /********** FOOTER  ***************/
+
+.footerRightSec {
+    width: 100%;
+    height: 70px;
+    background-color: #F3EEEA;
+}
+
 .footerRightSec i {
     font-size: 23px;
     color: #7e7a7a;
@@ -185,17 +211,4 @@ body {
     height: 50px;
     padding-left: 20px;
     font-size: 14px;
-}
-
-.msg{
-    width: 100px;
-    border-radius: 10px;
-}
-
-.sentMsg{
-background-color: #D5F9BA;
-}
-
-.receivedMsg{
-    background-color: white;
 }
