@@ -23,6 +23,7 @@ body {
 .appBox {
     width: 1550px;
     height: 920px;
+    border: 1px solid #cccccc;
 }
 
 /********* LEFT PART **************/
@@ -33,82 +34,86 @@ body {
     border-right: 2px solid #dedbdb;
 }
 
-.sectionHeader{
+.sectionHeader {
     width: 100%;
     height: 70px;
     background-color: #EAEAEA;
 }
 
-.logoContainer{
-    width: 55px;
-    height: 55px;
+.logoContainer {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-image: url("../img/avatar_2.jpg");
-    background-position: center;
-    background-size: contain;
+    /* background-image: url("../img/avatar_2.jpg"); */
+    /* background-position: center;
+    background-size: contain; */
 }
 
-.logoContainer > img{
+.profileImg {
     height: 100%;
-    object-fit: contain;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
-.profileSettings > i{
+.profileSettings>i {
     font-size: 23px;
     color: rgb(177, 177, 177);
 }
 
 
-.ringBellSection{
+.ringBellSection {
     width: 100%;
     height: 80px;
     background-color: #8EDAFC;
 }
 
-.notificationLogo{
+.notificationLogo {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     background-color: white;
 }
 
-.notificationLogo > i{
+.notificationLogo>i {
     font-size: 20px;
     color: #8EDAFC;
 }
 
-.notificationSettings{
+.notificationSettings {
     font-size: 14px;
 }
 
-.notificationSettings > a{
+.notificationSettings>a {
     color: #7e7a7a;
 }
 
-.search{
+.search {
     width: 100%;
     height: 55px;
     background-color: white;
 }
 
-.fa-magnifying-glass{
+.fa-magnifying-glass {
     color: #b3b0b0;
 }
 
-.searchInput{
-    width: 100%;
+.searchInput {
+    width: 80%;
+    height: 40px;
     border: none;
     font-size: 12px;
+    border-radius: 10px;
 }
 
-.messagesSec{
+.messagesSec {
     width: 100%;
     height: calc(100% - 205px);
     background-color: white;
     overflow-y: auto;
 }
 
-.chat{
+.chat {
     width: 100%;
     height: 80px;
     border: 1px solid #dedbdb;
@@ -117,16 +122,22 @@ body {
     padding: 0 10px 0 20px;
 }
 
-.leftChat{
+.leftChat {
     display: flex;
 }
 
-.nameAndMsg{
+.nameAndMsg {
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.message, .msgTime{
+.message {
+    font-size: 12px;
+    color: #a19f9f;
+}
+
+.msgTime > span{
     font-size: 12px;
     color: #a19f9f;
 }
@@ -139,14 +150,37 @@ body {
     height: 920px;
 }
 
-.mainSection{
+.mainSection {
     width: 100%;
     height: 780px;
-    background-image:url("../img/mine.jpg");
+    background-image: url("../img/mine.jpg");
 }
 
-.footerRightSec{
+.footerRightSec {
     width: 100%;
     height: 70px;
     background-color: #F3EEEA;
+}
+
+.lastTime{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/********** FOOTER  ***************/
+.footerRightSec i{
+    font-size: 23px;
+    color: #7e7a7a;
+}
+.writeMsg{
+    flex-grow: 1;
+}
+.textBox{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    padding-left: 20px;
+    font-size: 14px;
 }

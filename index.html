@@ -25,7 +25,9 @@
                 <div class="leftPart d-flex flex-column">
                     <div class=" ps-2 pe-4 sectionHeader d-flex align-items-center justify-content-between">
                         <div class="profileLogoBox d-flex align-items-center">
-                            <div class="logoContainer"></div>
+                            <div class="logoContainer">
+                                <img class="profileImg" src="./img/avatar_2.jpg" alt="">
+                            </div>
                             <span class="ms-2">Fabrizio</span>
                         </div>
                         <div class="profileSettings">
@@ -49,7 +51,7 @@
                         <label for="">
                             <i class="ms-3 fa-solid fa-magnifying-glass"></i>
                         </label>
-                        <input class="searchInput ms-5" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input class="searchInput ms-4 ps-1" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- CHATLIST SECTION -->
                     <div class="messagesSec">
@@ -57,15 +59,19 @@
                         <!-- CHAT -->
                         <div class="chat justify-content-between">
                             <div class="leftChat">
-                                <div class="logoContainer"></div>
+                                <div class="logoContainer">
+                                    <img class="profileImg" src="./img/avatar_io.jpg" alt="">
+                                </div>
                                 <div class="nameAndMsg ms-3 justify-content-center">
-                                    <div class="friendName">Vito Buonsanto</div>
+                                    <div class="friendName">Gabriella</div>
                                     <div class="message">
                                         <p>Ultimo messaggio arrivato </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="msgTime pt-2 pe-2 align-self-start">12:10</div>
+                            <div class="msgTime pt-2 pe-2 align-self-start">
+                                <span>12:10</span>
+                            </div>
                         </div>
 
                     </div>
@@ -77,13 +83,41 @@
                 <!--------------------------------------------->
 
                 <div class="rightPart d-flex flex-column">
-                    <div class="sectionHeader d-flex align-items-center">
-
+                    <div class=" ps-2 pe-4 pt-1 sectionHeader d-flex align-items-center justify-content-between">
+                        <div class="leftChat">
+                            <div class="logoContainer">
+                                <img class="profileImg mt-2" src="./img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="lastTime ms-3">
+                                <div class="friendName pt-3">Gabriella</div>
+                                <div class="message">
+                                    <p>Ultimo messaggio oggi alle 12:00 </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profileSettings">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip ms-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
+                        </div>
                     </div>
+                    <!------------- MAIN RIGHT ---------------->
                     <div class="mainSection">
 
                     </div>
-                    <div class="footerRightSec"></div>
+
+                    <!--------------- FOOTER ------------------>
+                    <div class="footerRightSec d-flex align-items-center p-2 justify-content-between">
+                        <div class="emoticon">
+                            <i class="fa-regular fa-face-smile ms-3"></i>
+                        </div>
+                        <div class="writeMsg ms-5 me-5">
+                            <input class="textBox" type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="vocalMsg">
+                            <i class="fa-solid fa-microphone pe-4"></i>
+                        </div>
+                    </div>
 
                 </div>
             </div>
