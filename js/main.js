@@ -9,6 +9,11 @@ createApp({
                 message: '',
                 status: 'sent'
             },
+            newAnswer: {
+                date: '10/01/2020 15:30:55',
+                message: 'ok',
+                status: 'received'
+            },
 
             contacts: [
                 {
@@ -189,11 +194,20 @@ createApp({
             console.log(this.clicked)
         },
         addMsg() {
-            let newMsg = {...this.newMessage};
+            let newMsg = { ...this.newMessage };
             console.log(newMsg);
             this.selectedChat.messages.push(newMsg);
             this.newMessage.message = "";
+            const myInterval = setInterval(this.addAnswer, 1000);
+            setTimeout(() => {
+                clearInterval(myInterval);
+            }, 1000);
         },
+        addAnswer(){
+            let answer = { ...this.newAnswer };
+                console.log(answer);
+                this.selectedChat.messages.push(answer);
+        }
     },
     beforeMount() {
         this.selectedChat = this.contacts[0]
