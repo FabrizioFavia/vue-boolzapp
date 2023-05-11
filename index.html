@@ -18,22 +18,41 @@
 
         <!----- VUE CONTAINER ----->
         <div id="app">
-            <div class="appBox border border-light d-flex">
+            <div class="appBox d-flex">
 
                 <!---------------- LEFT PART ------------------>
                 <!--------------------------------------------->
                 <div class="leftPart d-flex flex-column">
-                    <div class="sectionHeader d-flex align-items-center">
-
+                    <div class=" ps-2 pe-4 sectionHeader d-flex align-items-center justify-content-between">
+                        <div class="profileLogoBox d-flex align-items-center">
+                            <div class="logoContainer"></div>
+                            <span class="ms-2">Fabrizio</span>
+                        </div>
+                        <div class="profileSettings">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message ms-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
+                        </div>
                     </div>
-                    <div class="ringBell">
-
+                    <!-- NOTIFICATION SETTINGS -->
+                    <div class="ringBellSection ps-4 d-flex align-items-center justify-content-start">
+                        <div class="notificationLogo d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="notificationSettings ps-2 d-flex flex-column">
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
                     </div>
-                    <div class="search">
-
+                    <!-- SEARCH SECTION -->
+                    <div class="search ps-4 d-flex align-items-center">
+                        <label for="">
+                            <i class="ms-3 fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <input class="searchInput ms-5" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="messagesSec">
-                        
+
                     </div>
 
 
