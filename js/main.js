@@ -232,7 +232,7 @@ createApp({
             let answer = { ...this.newAnswer };
             console.log(answer);
             this.selectedChat.messages.push(answer);
-        }
+        },
     },
     beforeMount() {
         this.selectedChat = this.contacts[0]
