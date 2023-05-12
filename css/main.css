@@ -135,11 +135,15 @@ body {
 .message {
     font-size: 12px;
     color: #a19f9f;
+    max-width: 350px;
+
 }
 
 .msgTime>span {
     font-size: 12px;
     color: #a19f9f;
+    max-width: 350px;
+
 }
 
 
