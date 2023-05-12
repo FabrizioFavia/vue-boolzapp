@@ -51,7 +51,7 @@
                         <label for="">
                             <i class="ms-3 fa-solid fa-magnifying-glass"></i>
                         </label>
-                        <input class="searchInput ms-4 ps-1" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input id="filter" @onkeyup="chatFilter()" class="searchInput ms-4 ps-1" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- CHATLIST SECTION -->
                     <div class="messagesSec">
@@ -118,7 +118,8 @@
                             <i class="fa-regular fa-face-smile ms-3"></i>
                         </div>
                         <div class="writeMsg ms-5 me-5">
-                            <input v-model="newMessage.message" @keyUp.enter="addMsg" class="textBox" type="text" placeholder="Scrivi un messaggio">
+                            <input v-model="newMessage.message" @keyUp.enter="addMsg" class="textBox" type="text"
+                                placeholder="Scrivi un messaggio">
                         </div>
                         <div class="vocalMsg">
                             <i class="fa-solid fa-microphone pe-4"></i>
@@ -129,10 +130,7 @@
             </div>
         </div>
         <!----- VUE CONTAINER END ----->
-
     </div>
-
     <script src="./js/main.js"></script>
 </body>
-
 </html>

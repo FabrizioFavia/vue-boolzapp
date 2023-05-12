@@ -155,6 +155,7 @@ body {
     height: 780px;
     background-image: url("../img/mine.jpg");
     padding: 30px 80px;
+    overflow-y: auto;
 }
 
 .msg {

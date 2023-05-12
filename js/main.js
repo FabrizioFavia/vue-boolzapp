@@ -156,6 +156,28 @@ createApp({
                     ],
                 },
                 {
+                    name: 'Gabriella',
+                    avatar: './img/avatar_io.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao Claudia, hai novità?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Non ancora',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'Nessuna nuova, buona nuova',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
                     name: 'Davide',
                     avatar: './img/avatar_8.jpg',
                     visible: true,
@@ -196,17 +218,20 @@ createApp({
         addMsg() {
             let newMsg = { ...this.newMessage };
             console.log(newMsg);
-            this.selectedChat.messages.push(newMsg);
-            this.newMessage.message = "";
-            const myInterval = setInterval(this.addAnswer, 1000);
-            setTimeout(() => {
-                clearInterval(myInterval);
-            }, 1000);
+            if (newMsg.message.length >= 1) {
+                this.selectedChat.messages.push(newMsg);
+                this.newMessage.message = "";
+                const myInterval = setInterval(this.addAnswer, 1000);
+                setTimeout(() => {
+                    clearInterval(myInterval);
+                }, 1000);
+            }
+
         },
-        addAnswer(){
+        addAnswer() {
             let answer = { ...this.newAnswer };
-                console.log(answer);
-                this.selectedChat.messages.push(answer);
+            console.log(answer);
+            this.selectedChat.messages.push(answer);
         }
     },
     beforeMount() {
