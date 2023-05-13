@@ -51,23 +51,23 @@
                         <label for="">
                             <i class="ms-3 fa-solid fa-magnifying-glass"></i>
                         </label>
-                        <input id="filter" @onkeyup="resultQuery" class="searchInput ms-4 ps-1" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input @keyup="contactsFilter" v-model="inputSearch" id="filter" class="searchInput ms-4 ps-1" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- CHATLIST SECTION -->
                     <div class="messagesSec">
 
                         <!-- CHAT -->
                         <template v-for="(chat, i) in contacts">
-                            <div @click="clickedChat(chat)" class="chat justify-content-between">
+                            <div v-show="chat.visible==true" @click="clickedChat(chat)" class="chat justify-content-between">
                                 <div class="leftChat">
                                     <div class="logoContainer">
                                         <img class="profileImg" :src="chat.avatar" alt="">
                                     </div>
                                     <div class="nameAndMsg ms-3 justify-content-center">
-                                        <div class="friendName">{{chat.name}}</div>
-                                        <div class="message">
-                                            <p>{{chat.messages[chat.messages.length-1].message}}</p>
+                                        <div class="friendName">
+                                            <p>{{chat.name}}</p>
                                         </div>
+                                        <div class="message">{{chat.messages[chat.messages.length-1].message}}</div>
                                     </div>
                                 </div>
                                 <div class="msgTime pt-2 pe-2 align-self-start">

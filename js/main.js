@@ -117,7 +117,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Gabriella',
+                    name: 'Sandra',
                     avatar: './img/avatar_io.jpg',
                     visible: true,
                     messages: [
@@ -133,7 +133,7 @@ createApp({
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
+                            message: 'Va bene',
                             status: 'sent'
                         }
                     ],
@@ -201,9 +201,12 @@ createApp({
                 }
             ],
             selectedChat: null,
+            inputSearch: "",
+            nameArray: [],
         }
     },
     methods: {
+
         clickedChat(chat) {
             this.clicked = false;
             this.selectedChat = chat;
@@ -215,9 +218,9 @@ createApp({
 
             console.log(this.clicked)
         },
+
         addMsg() {
             let newMsg = { ...this.newMessage };
-            console.log(newMsg);
             if (newMsg.message.length >= 1) {
                 this.selectedChat.messages.push(newMsg);
                 this.newMessage.message = "";
@@ -228,11 +231,20 @@ createApp({
             }
 
         },
+
         addAnswer() {
             let answer = { ...this.newAnswer };
-            console.log(answer);
             this.selectedChat.messages.push(answer);
         },
+
+        contactsFilter() {
+            this.contacts.forEach(element => {
+                let toCheck = element.name.toLowerCase()
+                toCheck = toCheck.slice(0, this.inputSearch.length)
+                toCheck == this.inputSearch.toLowerCase() ? element.visible = true : element.visible = false;
+            })
+        }
+
     },
     beforeMount() {
         this.selectedChat = this.contacts[0]
