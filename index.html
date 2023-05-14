@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -23,6 +24,7 @@
                 <!---------------- LEFT PART ------------------>
                 <!--------------------------------------------->
                 <div class="leftPart d-flex flex-column">
+                    <!-- HEADER -->
                     <div class=" ps-2 pe-4 sectionHeader d-flex align-items-center justify-content-between">
                         <div class="profileLogoBox d-flex align-items-center">
                             <div class="logoContainer">
@@ -51,14 +53,15 @@
                         <label for="">
                             <i class="ms-3 fa-solid fa-magnifying-glass"></i>
                         </label>
-                        <input @keyup="contactsFilter" v-model="inputSearch" id="filter" class="searchInput ms-4 ps-1" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input @keyup="contactsFilter" v-model="inputSearch" id="filter" class="searchInput ms-4 ps-1"
+                            type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- CHATLIST SECTION -->
                     <div class="messagesSec">
 
-                        <!-- CHAT -->
                         <template v-for="(chat, i) in contacts">
-                            <div v-show="chat.visible==true" @click="clickedChat(chat)" class="chat justify-content-between">
+                            <div v-show="chat.visible==true" @click="clickedChat(chat)"
+                                class="chat justify-content-between">
                                 <div class="leftChat">
                                     <div class="logoContainer">
                                         <img class="profileImg" :src="chat.avatar" alt="">
@@ -77,13 +80,17 @@
                         </template>
                     </div>
 
-
                 </div>
+
+
+
 
                 <!---------------- RIGHT PART ----------------->
                 <!--------------------------------------------->
 
                 <div class="rightPart d-flex flex-column">
+
+                    <!-- HEADER -->
                     <div class=" ps-2 pe-4 pt-1 sectionHeader d-flex align-items-center justify-content-between">
                         <div class="leftChat">
                             <div class="logoContainer">
@@ -92,7 +99,7 @@
                             <div class="lastTime ms-3">
                                 <div class="friendName pt-3">{{selectedChat.name}}</div>
                                 <div class="message">
-                                    <p>Ultimo messaggio il
+                                    <p @click="getHour()">Ultimo messaggio il
                                         {{selectedChat.messages[selectedChat.messages.length-1].date}}</p>
                                 </div>
                             </div>
@@ -106,8 +113,9 @@
                     <!------------- MAIN RIGHT ---------------->
                     <div class="mainSection d-flex flex-column">
                         <template v-for="message in selectedChat.messages">
-                            <div :class="(message.status==`sent`) ? `sent` : `received`" class="msg">
-                                {{message.message}}
+                            <div :class="(message.status==`sent`) ? `sent` : `received`" class="msg d-flex flex-column">
+                                <div>{{message.message}}</div>
+                                <div class="date">{{gethour(message)}}</div>
                             </div>
                         </template>
                     </div>
@@ -133,4 +141,5 @@
     </div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

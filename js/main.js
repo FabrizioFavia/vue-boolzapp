@@ -203,6 +203,7 @@ createApp({
             selectedChat: null,
             inputSearch: "",
             nameArray: [],
+            
         }
     },
     methods: {
@@ -217,6 +218,9 @@ createApp({
             }
 
             console.log(this.clicked)
+
+            const x = DateTime.now().setZone("America/New_York").minus({ weeks: 1 }).endOf("day").toISO();
+            console.log(x);
         },
 
         addMsg() {
@@ -243,10 +247,13 @@ createApp({
                 toCheck = toCheck.slice(0, this.inputSearch.length)
                 toCheck == this.inputSearch.toLowerCase() ? element.visible = true : element.visible = false;
             })
+        },
+        gethour(message){
+            return message.date.split(" ")[1].split(":")[0]+ ":" + message.date.split(" ")[1].split(":")[1];
         }
 
     },
     beforeMount() {
-        this.selectedChat = this.contacts[0]
+        this.selectedChat = this.contacts[0];
     }
 }).mount('#app')

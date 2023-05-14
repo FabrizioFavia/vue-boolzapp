@@ -172,15 +172,20 @@ body {
     background-color: #D5F9BA;
     display: flex;
     align-self: flex-end;
-    max-width: 350px;
+    max-width: 360px;
 }
 
 .received {
     background-color: white;
     display: flex;
     align-self: flex-start;
-    max-width: 350px;
+    max-width: 360px;
+}
 
+.date{
+    font-size: 10px;
+    align-self: flex-end;
+    color: #7e7a7a;
 }
 
 .clicked {
