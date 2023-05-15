@@ -246,18 +246,18 @@ createApp({
             })
         },
         currentTime() {
-            const oggi = this.DateTime.now();
+            const today = this.DateTime.now();
 
             // Formatta la data nel formato specificato
-            const formatoDesiderato = 'dd/MM/yyyy HH:mm:ss';
-            const dataFormattata = oggi.toFormat(formatoDesiderato);
+            const format = 'dd/MM/yyyy HH:mm:ss';
+            const dateFormat = today.toFormat(format);
 
-            console.log(dataFormattata.toString());
-            return dataFormattata.toString();
+            console.log(dateFormat.toString());
+            return dateFormat.toString();
         },
         messageTime(dataString) {
-            const data = this.DateTime.fromFormat(dataString.toString(), 'dd/MM/yyyy HH:mm:ss');
-            return data.toFormat('HH:mm').toString();
+            const date = this.DateTime.fromFormat(dataString.toString(), 'dd/MM/yyyy HH:mm:ss');
+            return date.toFormat('HH:mm').toString();
         },
 
         accessDate() {
