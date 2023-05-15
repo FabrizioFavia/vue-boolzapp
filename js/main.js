@@ -1,3 +1,5 @@
+
+
 const { createApp } = Vue
 
 createApp({
@@ -202,26 +204,18 @@ createApp({
             ],
             selectedChat: null,
             inputSearch: "",
-            nameArray: [],
-            
+            currentChat: 0,
         }
     },
     methods: {
 
-        clickedChat(chat) {
-            this.clicked = false;
+        clickedChat(chat, i) {
+            this.currentChat = i
             this.selectedChat = chat;
             console.log(this.selectedChat);
-
-            if (this.clicked == false) {
-                this.clicked = true;
-            }
-
-            console.log(this.clicked)
-
-            const x = DateTime.now().setZone("America/New_York").minus({ weeks: 1 }).endOf("day").toISO();
-            console.log(x);
         },
+
+
 
         addMsg() {
             let newMsg = { ...this.newMessage };
@@ -248,8 +242,8 @@ createApp({
                 toCheck == this.inputSearch.toLowerCase() ? element.visible = true : element.visible = false;
             })
         },
-        gethour(message){
-            return message.date.split(" ")[1].split(":")[0]+ ":" + message.date.split(" ")[1].split(":")[1];
+        gethour(message) {
+            return message.date.split(" ")[1].split(":")[0] + ":" + message.date.split(" ")[1].split(":")[1];
         }
 
     },

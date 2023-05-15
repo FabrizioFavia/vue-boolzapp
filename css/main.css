@@ -44,9 +44,6 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /* background-image: url("../img/avatar_2.jpg"); */
-    /* background-position: center;
-    background-size: contain; */
 }
 
 .profileImg {
@@ -144,8 +141,6 @@ body {
     max-width: 350px;
 }
 
-
-
 /********* RIGHT PART **************/
 .rightPart {
     width: 1000px;
@@ -189,7 +184,7 @@ body {
 }
 
 .clicked {
-    background-color: #E9EBEB;
+    background-color: #e7e7e7;
 }
 
 
