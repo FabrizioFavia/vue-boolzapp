@@ -8,12 +8,12 @@ createApp({
 
             DateTime: luxon.DateTime,
             newMessage: {
-                date: '10/01/2020 15:30:55',
+                date: '',
                 message: '',
                 status: 'sent'
             },
             newAnswer: {
-                date: '10/01/2020 15:30:55',
+                date: '',
                 message: 'ok',
                 status: 'received'
             },
@@ -220,6 +220,7 @@ createApp({
 
         addMsg() {
             let newMsg = { ...this.newMessage };
+            newMsg.date = this.currentTime();
             if (newMsg.message.length >= 1) {
                 this.selectedChat.messages.push(newMsg);
                 this.newMessage.message = "";
@@ -233,6 +234,7 @@ createApp({
 
         addAnswer() {
             let answer = { ...this.newAnswer };
+            answer.date = this.currentTime();
             this.selectedChat.messages.push(answer);
         },
 
@@ -243,18 +245,23 @@ createApp({
                 toCheck == this.inputSearch.toLowerCase() ? element.visible = true : element.visible = false;
             })
         },
-        /* gethour(currentTime) {
-            return message.date.split(" ")[1].split(":")[0] + ":" + message.date.split(" ")[1].split(":")[1];
-        }, */
         currentTime() {
-            return this.DateTime.now().toString();
+            const oggi = this.DateTime.now();
+
+            // Formatta la data nel formato specificato
+            const formatoDesiderato = 'dd/MM/yyyy HH:mm:ss';
+            const dataFormattata = oggi.toFormat(formatoDesiderato);
+
+            console.log(dataFormattata.toString());
+            return dataFormattata.toString();
         },
-        messageTime() {
-            return this.currentTime().split("-")[2].slice(3,8);
+        messageTime(dataString) {
+            const data = this.DateTime.fromFormat(dataString.toString(), 'dd/MM/yyyy HH:mm:ss');
+            return data.toFormat('HH:mm').toString();
         },
 
-        accessDate(){
-            return this.currentTime().slice(0,10);
+        accessDate() {
+            return this.currentTime().slice(0, 10);
         }
 
     },

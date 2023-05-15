@@ -3,7 +3,6 @@
 
 <head>
     <script src="./js/luxon.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
@@ -81,8 +80,7 @@
                                     </div>
                                 </div>
                                 <div class="msgTime pt-2 pe-2 align-self-start">
-                                    <span v-if="i==0">{{accessDate()}}
-                                        {{messageTime()}}</span>
+                                    <span v-if="i==0">{{currentTime()}}</span>
                                     <span v-else>{{chat.messages[chat.messages.length-1].date}}</span>
                                 </div>
                             </div>
@@ -108,8 +106,8 @@
                             <div class="lastTime ms-3">
                                 <div class="friendName pt-3">{{selectedChat.name}}</div>
                                 <div class="message">
-                                    <p @click="messageTime(selectedChat)">Ultimo accesso il {{accessDate()}} alle
-                                        {{messageTime()}}</p>
+                                    <p>Ultimo accesso il {{accessDate()}} alle
+                                        {{messageTime(selectedChat.messages[selectedChat.messages.length-1].date)}}</p>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +122,7 @@
                         <template v-for="message in selectedChat.messages">
                             <div :class="(message.status==`sent`) ? `sent` : `received`" class="msg d-flex flex-column">
                                 <div>{{message.message}}</div>
-                                <div class="date">{{messageTime()}}</div>
+                                <div class="date">{{messageTime((message.date))}}</div>
                             </div>
                         </template>
                     </div>
