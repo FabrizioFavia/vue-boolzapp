@@ -6,6 +6,7 @@ createApp({
     data() {
         return {
 
+            DateTime: luxon.DateTime,
             newMessage: {
                 date: '10/01/2020 15:30:55',
                 message: '',
@@ -242,8 +243,18 @@ createApp({
                 toCheck == this.inputSearch.toLowerCase() ? element.visible = true : element.visible = false;
             })
         },
-        gethour(message) {
+        /* gethour(currentTime) {
             return message.date.split(" ")[1].split(":")[0] + ":" + message.date.split(" ")[1].split(":")[1];
+        }, */
+        currentTime() {
+            return this.DateTime.now().toString();
+        },
+        messageTime() {
+            return this.currentTime().split("-")[2].slice(3,8);
+        },
+
+        accessDate(){
+            return this.currentTime().slice(0,10);
         }
 
     },
