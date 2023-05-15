@@ -81,7 +81,9 @@
                                     </div>
                                 </div>
                                 <div class="msgTime pt-2 pe-2 align-self-start">
-                                    <span>{{chat.messages[chat.messages.length-1].date}}</span>
+                                    <span v-if="i==0">{{accessDate()}}
+                                        {{messageTime()}}</span>
+                                    <span v-else>{{chat.messages[chat.messages.length-1].date}}</span>
                                 </div>
                             </div>
                         </template>
